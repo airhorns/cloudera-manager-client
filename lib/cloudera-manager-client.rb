@@ -27,6 +27,6 @@ end
 require 'cloudera-manager/base_resource'
 require 'cloudera-manager/tool'
 require 'cloudera-manager/host'
-require 'cloudera-manager/cluster'
 require 'cloudera-manager/service'
+require 'cloudera-manager/cluster'
 require 'cloudera-manager/command'

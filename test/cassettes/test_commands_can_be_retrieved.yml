@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://admin:password@hadoop.com:7111/api/v10/clusters/cluster
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 01-Jan-1970 00:00:00 GMT
+      Set-Cookie:
+      - CLOUDERA_MANAGER_SESSIONID=foobar;Path=/;HttpOnly
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 20 Nov 2015 03:24:37 GMT
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - Jetty(6.1.26.cloudera.4)
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "name" : "cluster",
+          "displayName" : "Shopify Production",
+          "version" : "CDH5",
+          "fullVersion" : "5.4.1",
+          "maintenanceMode" : false,
+          "maintenanceOwners" : [ ],
+          "clusterUrl" : "http://hadoop.com:7111/cmf/clusterRedirect/cluster"
+        }
+    http_version: 
+  recorded_at: Fri, 20 Nov 2015 03:24:37 GMT
+- request:
+    method: get
+    uri: http://admin:password@hadoop.com:7111/api/v10/clusters/cluster/commands
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 01-Jan-1970 00:00:00 GMT
+      Set-Cookie:
+      - CLOUDERA_MANAGER_SESSIONID=foobar;Path=/;HttpOnly
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 20 Nov 2015 03:24:37 GMT
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - Jetty(6.1.26.cloudera.4)
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 47592,
+            "name" : "RefreshCluster",
+            "startTime" : "2015-11-20T03:24:35.218Z",
+            "active" : true,
+            "clusterRef" : {
+              "clusterName" : "cluster"
+            }
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 20 Nov 2015 03:24:37 GMT
+recorded_with: VCR 3.0.0

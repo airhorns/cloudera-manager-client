@@ -1,4 +1,4 @@
 module ClouderaManager
-  class Serivce < BaseResource
+  class Service < BaseResource
   end
 end
