@@ -7,7 +7,7 @@ require 'cloudera-manager-client'
 url = ENV['CLOUDERA_MANAGER_URI'] || "http://hadoop.com:7111"
 username = ENV['CLOUDERA_MANAGER_USER'] || "admin"
 password = ENV['CLOUDERA_MANAGER_PASSWORD'] || "password"
-ClouderaManager.setup url: url , username: username, password: password
+ClouderaManager.setup url: url, username: username, password: password
 
 VCR.configure do |c|
   c.cassette_library_dir = 'test/cassettes'

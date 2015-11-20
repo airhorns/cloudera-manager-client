@@ -17,6 +17,7 @@ module ClouderaManager
       conn.use ClouderaManager::Middleware::URLPrefix, '/api/v10'
       conn.use ClouderaManager::Middleware::JSONParser
       conn.use ClouderaManager::Middleware::JSONSerializer
+      conn.use Faraday::Response::RaiseError
       conn.basic_auth username, password
       conn.adapter Faraday.default_adapter
       blk.call(conn) if blk
