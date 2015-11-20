@@ -9,4 +9,5 @@ group :development do
   gem 'rsense'
   gem 'webmock'
   gem 'vcr'
+  gem 'minitest-ci', :git => 'git@github.com:circleci/minitest-ci.git', :require => false
 end

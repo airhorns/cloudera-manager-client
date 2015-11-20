@@ -26,4 +26,5 @@ class RemoteTest < Minitest::Test
   end
 
 end
+
 require 'minitest/autorun'
