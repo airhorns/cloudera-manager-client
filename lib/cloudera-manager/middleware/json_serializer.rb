@@ -12,6 +12,7 @@ module ClouderaManager
             body = { items: body }
           end
           request_env[:body] = MultiJson.dump(body)
+          request_env[:request_headers]['Content-type'] = "application/json"
         end
 
         @app.call(request_env)
