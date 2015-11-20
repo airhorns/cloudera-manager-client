@@ -16,9 +16,9 @@ module ClouderaManager
       command = nil
       self.class.request(_method: method, _path: File.join(request_path, path_segment)) do |parsed_data, response|
         command = Command.new(parsed_data[:data])
-        return false if !response.success? || @response_errors.any?
+        return command if !response.success? || !command.success || @response_errors.any?
       end
-      return false unless refresh
+      refresh
       command
     end
   end

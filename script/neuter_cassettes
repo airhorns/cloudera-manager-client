@@ -5,6 +5,7 @@ Dir.glob(File.join(File.dirname(__FILE__), '..', 'test', 'cassettes', '*.yml')) 
   lines = IO.readlines(path).map do |line|
     new_line = line.gsub(/spy:[a-zA-Z0-9]+@/, "admin:password@")
                    .gsub(/[\w\-\.]+shopify\.com:\d+/, "hadoop.com:7111")
+                   .gsub(/CLOUDERA_MANAGER_SESSIONID=[^;]+/, "CLOUDERA_MANAGER_SESSIONID=foobar")
     changes += 1 if new_line != line
     new_line
   end
