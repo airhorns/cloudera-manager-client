@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+Dir.glob(File.join(File.dirname(__FILE__), '..', 'test', 'cassettes', '*.yml')) do |path|
+  changes = 0
+  lines = IO.readlines(path).map do |line|
+    new_line = line.gsub(/spy:[a-zA-Z0-9]+@/, "admin:password@")
+                   .gsub(/[\w\-\.]+shopify\.com:\d+/, "hadoop.com:7111")
+    changes += 1 if new_line != line
+    new_line
+  end
+  File.open(path, 'w') { |file| file.puts lines }
+  puts "Rewrote #{path}, changed #{changes} lines"
+end
