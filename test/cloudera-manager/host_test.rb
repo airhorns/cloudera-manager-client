@@ -11,6 +11,24 @@ class ClouderaManager::HostTest < RemoteTest
     assert_equal 'hadoop-util1.chi.shopify.com', @host.hostname
   end
 
+  def test_retrieving_hosts_by_hostname
+    @host = ClouderaManager::Host.find_by_hostname('hadoop-util1.chi.shopify.com')
+    assert_equal 'hadoop-util1.chi.shopify.com', @host.hostname
+    assert_equal '4f8ebfcb-20c9-47f1-bd0e-cd3f1d8c891e', @host.id
+
+    assert_raises(ClouderaManager::Host::HostNotFoundException) do
+      ClouderaManager::Host.find_by_hostname('expensive-other-database.shopify.com')
+    end
+  end
+
+  def test_hadoopy_for_hosts_is_true_if_they_are_found_in_cloudera_manager
+    assert ClouderaManager::Host.hadoopy?('hadoop-util1.chi.shopify.com')
+  end
+
+  def test_hadoopy_for_hosts_is_true_if_they_are_not_found_in_cloudera_manager
+    assert !ClouderaManager::Host.hadoopy?('expensive-other-database.shopify.com')
+  end
+
   def test_putting_a_host_into_maintenance_mode_success
     @host = ClouderaManager::Host.find('4f8ebfcb-20c9-47f1-bd0e-cd3f1d8c891e')
     assert !@host.maintenanceMode
@@ -30,7 +48,7 @@ class ClouderaManager::HostTest < RemoteTest
     assert !@host.maintenanceMode
 
     assert !@command.success
-    assert @command.message = "Thing failed"
+    assert_equal "Thing failed", @command.resultMessage
   end
 
   def test_exiting_a_host_from_maintenance_mode_success
@@ -58,6 +76,6 @@ class ClouderaManager::HostTest < RemoteTest
     assert @host.maintenanceMode
 
     assert !@command.success
-    assert @command.message = "Thing failed"
+    assert_equal "Thing failed", @command.resultMessage
   end
 end
