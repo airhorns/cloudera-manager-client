@@ -13,13 +13,20 @@ module ClouderaManager
       end
     end
 
-    def remote_command!(method, path_segment)
+    def remote_command!(path_segment, body = {})
       command = nil
-      self.class.request(_method: method, _path: File.join(request_path, path_segment)) do |parsed_data, response|
-        command = Command.new(parsed_data[:data])
-        return command if !response.success? || !command.success || @response_errors.any?
+      params = body.merge({_method: :post, _path: File.join(request_path, path_segment)})
+
+      self.class.request(params) do |parsed_data, response|
+        data = parsed_data[:data]
+        command = if data.respond_to?(:to_hash)
+          Command.new(data.to_hash)
+        else
+          BulkCommand.new(data)
+        end
+        refresh if response.success? && command.success
       end
-      refresh
+
       command
     end
   end
