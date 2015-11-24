@@ -29,5 +29,9 @@ module ClouderaManager
         0
       end
     end
+
+    def failed
+      select { |command| command.finished? && ! command.success }
+    end
   end
 end

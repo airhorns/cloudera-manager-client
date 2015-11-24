@@ -43,6 +43,17 @@ class ClouderaManager::BulkCommandTest < Minitest::Test
     assert_equal 0, ClouderaManager::BulkCommand.new.success_ratio
   end
 
+  def test_failed_returns_only_the_finished_and_unsuccessful_commands
+    assert_equal [], @bulk_command.failed
+    command = ClouderaManager::Command.new(success: false, active: true)
+
+    @bulk_command << command
+    assert_equal [], @bulk_command.failed
+
+    command.active = false
+    assert_equal [command], @bulk_command.failed
+  end
+
   def test_block_until_outcome_returns_the_success_status_immediately_if_all_commands_are_complete
     assert @bulk_command.block_until_outcome
   end
