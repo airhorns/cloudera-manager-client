@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 20 Nov 2015 20:16:07 GMT
+      - Tue, 24 Nov 2015 03:37:47 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -43,7 +43,7 @@ http_interactions:
           "clusterUrl" : "http://hadoop.com:7111/cmf/clusterRedirect/cluster"
         }
     http_version: 
-  recorded_at: Fri, 20 Nov 2015 20:16:07 GMT
+  recorded_at: Tue, 24 Nov 2015 03:37:47 GMT
 - request:
     method: get
     uri: http://admin:password@hadoop.com:7111/api/v10/clusters/cluster/services
@@ -69,7 +69,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 20 Nov 2015 20:16:07 GMT
+      - Tue, 24 Nov 2015 03:37:47 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -117,51 +117,6 @@ http_interactions:
             "maintenanceMode" : false,
             "maintenanceOwners" : [ ],
             "displayName" : "Hue"
-          }, {
-            "name" : "oozie1",
-            "type" : "OOZIE",
-            "clusterRef" : {
-              "clusterName" : "cluster"
-            },
-            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/oozie1",
-            "serviceState" : "STARTED",
-            "healthSummary" : "CONCERNING",
-            "healthChecks" : [ {
-              "name" : "OOZIE_OOZIE_SERVERS_HEALTHY",
-              "summary" : "CONCERNING"
-            } ],
-            "configStalenessStatus" : "FRESH",
-            "clientConfigStalenessStatus" : "FRESH",
-            "maintenanceMode" : false,
-            "maintenanceOwners" : [ ],
-            "displayName" : "oozie1"
-          }, {
-            "name" : "impala",
-            "type" : "IMPALA",
-            "clusterRef" : {
-              "clusterName" : "cluster"
-            },
-            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/impala",
-            "serviceState" : "STARTED",
-            "healthSummary" : "GOOD",
-            "healthChecks" : [ {
-              "name" : "IMPALA_ASSIGNMENT_LOCALITY",
-              "summary" : "GOOD"
-            }, {
-              "name" : "IMPALA_CATALOGSERVER_HEALTH",
-              "summary" : "GOOD"
-            }, {
-              "name" : "IMPALA_IMPALADS_HEALTHY",
-              "summary" : "GOOD"
-            }, {
-              "name" : "IMPALA_STATESTORE_HEALTH",
-              "summary" : "GOOD"
-            } ],
-            "configStalenessStatus" : "FRESH",
-            "clientConfigStalenessStatus" : "FRESH",
-            "maintenanceMode" : false,
-            "maintenanceOwners" : [ ],
-            "displayName" : "Impala"
           }, {
             "name" : "hdfs1",
             "type" : "HDFS",
@@ -246,13 +201,58 @@ http_interactions:
             "maintenanceMode" : false,
             "maintenanceOwners" : [ ],
             "displayName" : "Hive"
+          }, {
+            "name" : "oozie1",
+            "type" : "OOZIE",
+            "clusterRef" : {
+              "clusterName" : "cluster"
+            },
+            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/oozie1",
+            "serviceState" : "STARTED",
+            "healthSummary" : "CONCERNING",
+            "healthChecks" : [ {
+              "name" : "OOZIE_OOZIE_SERVERS_HEALTHY",
+              "summary" : "CONCERNING"
+            } ],
+            "configStalenessStatus" : "FRESH",
+            "clientConfigStalenessStatus" : "FRESH",
+            "maintenanceMode" : true,
+            "maintenanceOwners" : [ "SERVICE" ],
+            "displayName" : "oozie1"
+          }, {
+            "name" : "impala",
+            "type" : "IMPALA",
+            "clusterRef" : {
+              "clusterName" : "cluster"
+            },
+            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/impala",
+            "serviceState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "IMPALA_ASSIGNMENT_LOCALITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "IMPALA_CATALOGSERVER_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "IMPALA_IMPALADS_HEALTHY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "IMPALA_STATESTORE_HEALTH",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "FRESH",
+            "clientConfigStalenessStatus" : "FRESH",
+            "maintenanceMode" : true,
+            "maintenanceOwners" : [ "SERVICE" ],
+            "displayName" : "Impala"
           } ]
         }
     http_version: 
-  recorded_at: Fri, 20 Nov 2015 20:16:07 GMT
+  recorded_at: Tue, 24 Nov 2015 03:37:47 GMT
 - request:
     method: get
-    uri: http://admin:password@hadoop.com:7111/api/v10/clusters/cluster/services/oozie1/roles
+    uri: http://admin:password@hadoop.com:7111/api/v10/clusters/cluster/services/hive/roleTypes
     body:
       encoding: US-ASCII
       string: ''
@@ -275,7 +275,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 20 Nov 2015 20:16:07 GMT
+      - Tue, 24 Nov 2015 03:37:47 GMT
       Transfer-Encoding:
       - chunked
       Server:
@@ -284,117 +284,8 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "items" : [ {
-            "name" : "oozie1-OOZIE_SERVER-41b880ae9c2aa2a0d063deb54639716d",
-            "type" : "OOZIE_SERVER",
-            "serviceRef" : {
-              "clusterName" : "cluster",
-              "serviceName" : "oozie1"
-            },
-            "hostRef" : {
-              "hostId" : "3b5d049e-1ade-44f8-8cba-1cba5cb6afad"
-            },
-            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/oozie1-OOZIE_SERVER-41b880ae9c2aa2a0d063deb54639716d",
-            "roleState" : "STARTED",
-            "healthSummary" : "CONCERNING",
-            "healthChecks" : [ {
-              "name" : "OOZIE_SERVER_CALLABLEQUEUE_SIZE_HEALTH",
-              "summary" : "GOOD"
-            }, {
-              "name" : "OOZIE_SERVER_FILE_DESCRIPTOR",
-              "summary" : "GOOD"
-            }, {
-              "name" : "OOZIE_SERVER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
-              "summary" : "DISABLED"
-            }, {
-              "name" : "OOZIE_SERVER_HOST_HEALTH",
-              "summary" : "CONCERNING"
-            }, {
-              "name" : "OOZIE_SERVER_LOG_DIRECTORY_FREE_SPACE",
-              "summary" : "GOOD"
-            }, {
-              "name" : "OOZIE_SERVER_PAUSE_DURATION",
-              "summary" : "GOOD"
-            }, {
-              "name" : "OOZIE_SERVER_SCM_HEALTH",
-              "summary" : "GOOD"
-            }, {
-              "name" : "OOZIE_SERVER_SHARED_LIB_VERSION_HEALTH",
-              "summary" : "GOOD"
-            }, {
-              "name" : "OOZIE_SERVER_SWAP_MEMORY_USAGE",
-              "summary" : "GOOD"
-            }, {
-              "name" : "OOZIE_SERVER_UNEXPECTED_EXITS",
-              "summary" : "GOOD"
-            }, {
-              "name" : "OOZIE_SERVER_WEB_METRIC_COLLECTION",
-              "summary" : "GOOD"
-            } ],
-            "configStalenessStatus" : "FRESH",
-            "maintenanceMode" : true,
-            "maintenanceOwners" : [ "ROLE" ],
-            "commissionState" : "COMMISSIONED",
-            "roleConfigGroupRef" : {
-              "roleConfigGroupName" : "oozie1-OOZIE_SERVER-BASE"
-            }
-          } ]
+          "items" : [ "GATEWAY", "HIVEMETASTORE", "WEBHCAT", "HIVESERVER2" ]
         }
     http_version: 
-  recorded_at: Fri, 20 Nov 2015 20:16:08 GMT
-- request:
-    method: post
-    uri: http://admin:password@hadoop.com:7111/api/v10/clusters/cluster/services/oozie1/roleCommands/restart
-    body:
-      encoding: UTF-8
-      string: '{"items":["oozie1-OOZIE_SERVER-41b880ae9c2aa2a0d063deb54639716d"]}'
-    headers:
-      User-Agent:
-      - Faraday v0.9.2
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Expires:
-      - Thu, 01-Jan-1970 00:00:00 GMT
-      Set-Cookie:
-      - CLOUDERA_MANAGER_SESSIONID=foobar;Path=/;HttpOnly
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 20 Nov 2015 20:16:08 GMT
-      Transfer-Encoding:
-      - chunked
-      Server:
-      - Jetty(6.1.26.cloudera.4)
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "errors" : [ ],
-          "items" : [ {
-            "id" : 47667,
-            "name" : "Restart",
-            "startTime" : "2015-11-20T20:16:08.168Z",
-            "active" : true,
-            "serviceRef" : {
-              "clusterName" : "cluster",
-              "serviceName" : "oozie1"
-            },
-            "roleRef" : {
-              "clusterName" : "cluster",
-              "serviceName" : "oozie1",
-              "roleName" : "oozie1-OOZIE_SERVER-41b880ae9c2aa2a0d063deb54639716d"
-            }
-          } ]
-        }
-    http_version: 
-  recorded_at: Fri, 20 Nov 2015 20:16:08 GMT
+  recorded_at: Tue, 24 Nov 2015 03:37:47 GMT
 recorded_with: VCR 3.0.0

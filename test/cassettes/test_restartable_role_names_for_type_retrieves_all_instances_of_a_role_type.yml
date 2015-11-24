@@ -1,0 +1,4645 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://admin:password@hadoop.com:7111/api/v10/clusters/cluster
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 01-Jan-1970 00:00:00 GMT
+      Set-Cookie:
+      - CLOUDERA_MANAGER_SESSIONID=foobar;Path=/;HttpOnly
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 24 Nov 2015 03:24:34 GMT
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - Jetty(6.1.26.cloudera.4)
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "name" : "cluster",
+          "displayName" : "Shopify Production",
+          "version" : "CDH5",
+          "fullVersion" : "5.4.1",
+          "maintenanceMode" : false,
+          "maintenanceOwners" : [ ],
+          "clusterUrl" : "http://hadoop.com:7111/cmf/clusterRedirect/cluster"
+        }
+    http_version: 
+  recorded_at: Tue, 24 Nov 2015 03:24:34 GMT
+- request:
+    method: get
+    uri: http://admin:password@hadoop.com:7111/api/v10/clusters/cluster/services
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 01-Jan-1970 00:00:00 GMT
+      Set-Cookie:
+      - CLOUDERA_MANAGER_SESSIONID=foobar;Path=/;HttpOnly
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 24 Nov 2015 03:24:34 GMT
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - Jetty(6.1.26.cloudera.4)
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "name" : "zookeeper1",
+            "type" : "ZOOKEEPER",
+            "clusterRef" : {
+              "clusterName" : "cluster"
+            },
+            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/zookeeper1",
+            "serviceState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "ZOOKEEPER_CANARY_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "ZOOKEEPER_SERVERS_HEALTHY",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE",
+            "clientConfigStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "displayName" : "zookeeper1"
+          }, {
+            "name" : "hue",
+            "type" : "HUE",
+            "clusterRef" : {
+              "clusterName" : "cluster"
+            },
+            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/hue",
+            "serviceState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "HUE_HUE_SERVERS_HEALTHY",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE",
+            "clientConfigStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "displayName" : "Hue"
+          }, {
+            "name" : "hdfs1",
+            "type" : "HDFS",
+            "clusterRef" : {
+              "clusterName" : "cluster"
+            },
+            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/hdfs1",
+            "serviceState" : "STARTED",
+            "healthSummary" : "CONCERNING",
+            "healthChecks" : [ {
+              "name" : "HDFS_BLOCKS_WITH_CORRUPT_REPLICAS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "HDFS_CANARY_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "HDFS_DATA_NODES_HEALTHY",
+              "summary" : "CONCERNING"
+            }, {
+              "name" : "HDFS_FAILOVER_CONTROLLERS_HEALTHY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "HDFS_FREE_SPACE_REMAINING",
+              "summary" : "GOOD"
+            }, {
+              "name" : "HDFS_HA_NAMENODE_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "HDFS_MISSING_BLOCKS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "HDFS_UNDER_REPLICATED_BLOCKS",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "FRESH",
+            "clientConfigStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "displayName" : "hdfs1"
+          }, {
+            "name" : "yarn",
+            "type" : "YARN",
+            "clusterRef" : {
+              "clusterName" : "cluster"
+            },
+            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/yarn",
+            "serviceState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "YARN_JOBHISTORY_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "YARN_NODE_MANAGERS_HEALTHY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "YARN_RESOURCEMANAGERS_HEALTH",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE",
+            "clientConfigStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "displayName" : "YARN (MR2 Included)"
+          }, {
+            "name" : "hive",
+            "type" : "HIVE",
+            "clusterRef" : {
+              "clusterName" : "cluster"
+            },
+            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/hive",
+            "serviceState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "HIVE_HIVEMETASTORES_HEALTHY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "HIVE_HIVESERVER2S_HEALTHY",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE",
+            "clientConfigStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "displayName" : "Hive"
+          }, {
+            "name" : "oozie1",
+            "type" : "OOZIE",
+            "clusterRef" : {
+              "clusterName" : "cluster"
+            },
+            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/oozie1",
+            "serviceState" : "STARTED",
+            "healthSummary" : "CONCERNING",
+            "healthChecks" : [ {
+              "name" : "OOZIE_OOZIE_SERVERS_HEALTHY",
+              "summary" : "CONCERNING"
+            } ],
+            "configStalenessStatus" : "FRESH",
+            "clientConfigStalenessStatus" : "FRESH",
+            "maintenanceMode" : true,
+            "maintenanceOwners" : [ "SERVICE" ],
+            "displayName" : "oozie1"
+          }, {
+            "name" : "impala",
+            "type" : "IMPALA",
+            "clusterRef" : {
+              "clusterName" : "cluster"
+            },
+            "serviceUrl" : "http://hadoop.com:7111/cmf/serviceRedirect/impala",
+            "serviceState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "IMPALA_ASSIGNMENT_LOCALITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "IMPALA_CATALOGSERVER_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "IMPALA_IMPALADS_HEALTHY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "IMPALA_STATESTORE_HEALTH",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "FRESH",
+            "clientConfigStalenessStatus" : "FRESH",
+            "maintenanceMode" : true,
+            "maintenanceOwners" : [ "SERVICE" ],
+            "displayName" : "Impala"
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 24 Nov 2015 03:24:34 GMT
+- request:
+    method: get
+    uri: http://admin:password@hadoop.com:7111/api/v10/clusters/cluster/services/oozie1/roles
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 01-Jan-1970 00:00:00 GMT
+      Set-Cookie:
+      - CLOUDERA_MANAGER_SESSIONID=foobar;Path=/;HttpOnly
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 24 Nov 2015 03:24:34 GMT
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - Jetty(6.1.26.cloudera.4)
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "name" : "oozie1-OOZIE_SERVER-41b880ae9c2aa2a0d063deb54639716d",
+            "type" : "OOZIE_SERVER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "oozie1"
+            },
+            "hostRef" : {
+              "hostId" : "3b5d049e-1ade-44f8-8cba-1cba5cb6afad"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/oozie1-OOZIE_SERVER-41b880ae9c2aa2a0d063deb54639716d",
+            "roleState" : "STARTED",
+            "healthSummary" : "CONCERNING",
+            "healthChecks" : [ {
+              "name" : "OOZIE_SERVER_CALLABLEQUEUE_SIZE_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "OOZIE_SERVER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "OOZIE_SERVER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "OOZIE_SERVER_HOST_HEALTH",
+              "summary" : "CONCERNING"
+            }, {
+              "name" : "OOZIE_SERVER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "OOZIE_SERVER_PAUSE_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "OOZIE_SERVER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "OOZIE_SERVER_SHARED_LIB_VERSION_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "OOZIE_SERVER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "OOZIE_SERVER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "OOZIE_SERVER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "FRESH",
+            "maintenanceMode" : true,
+            "maintenanceOwners" : [ "ROLE", "SERVICE" ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "oozie1-OOZIE_SERVER-BASE"
+            }
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 24 Nov 2015 03:24:34 GMT
+- request:
+    method: get
+    uri: http://admin:password@hadoop.com:7111/api/v10/clusters/cluster/services/yarn/roles
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 01-Jan-1970 00:00:00 GMT
+      Set-Cookie:
+      - CLOUDERA_MANAGER_SESSIONID=foobar;Path=/;HttpOnly
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 24 Nov 2015 03:24:34 GMT
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - Jetty(6.1.26.cloudera.4)
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "name" : "yarn-NODEMANAGER-0f049d5855970562c459815c4c07cca4",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "6815b57a-c437-42ef-ad79-69ec3d7d48e5"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-0f049d5855970562c459815c4c07cca4",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-81b2955c44074df00671d1830665ace6",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "b0da3de2-c1cd-4914-9dd4-54af1f69cece"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-81b2955c44074df00671d1830665ace6",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-GATEWAY-dee69fdde632944322a3e8813772a8a0",
+            "type" : "GATEWAY",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "9fe976ea-5778-45d7-b557-ae915820a452"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-GATEWAY-dee69fdde632944322a3e8813772a8a0",
+            "roleState" : "NA",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ ],
+            "configStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-GATEWAY-BASE"
+            }
+          }, {
+            "name" : "yarn-GATEWAY-41b880ae9c2aa2a0d063deb54639716d",
+            "type" : "GATEWAY",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "3b5d049e-1ade-44f8-8cba-1cba5cb6afad"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-GATEWAY-41b880ae9c2aa2a0d063deb54639716d",
+            "roleState" : "NA",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ ],
+            "configStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-GATEWAY-BASE"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-9c843c121b3bd2ba5fc34ae76389db05",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "70428def-2db6-46f0-b351-ed4802f28172"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-9c843c121b3bd2ba5fc34ae76389db05",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-c5fbf2af7091dd03dc1e632b08b359df",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "4e0700f8-ea5f-4843-b83e-5d246919ff82"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-c5fbf2af7091dd03dc1e632b08b359df",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-ea1397b25711c955b57179757a21fd12",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "b278cdb9-036a-4fee-9665-0f0b6357b776"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-ea1397b25711c955b57179757a21fd12",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-8edcde5a882f316ba3d90430377ddbc0",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "f7787506-57eb-423e-9783-d92aff934ff4"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-8edcde5a882f316ba3d90430377ddbc0",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-81563200ff4e32d6a869a7ad7d19fb34",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "6a57e619-cc37-492c-8082-c8fc454b97e9"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-81563200ff4e32d6a869a7ad7d19fb34",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-3"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-51df1d1943c648762f9899d3005069b4",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "e7a99463-7629-4cda-bef4-16a94089e919"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-51df1d1943c648762f9899d3005069b4",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "FRESH",
+            "maintenanceMode" : true,
+            "maintenanceOwners" : [ "ROLE" ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-7cb8e9255fc6c85e2bf9cb6662157893",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "78b3d3f9-f6ec-40a7-a768-3a8e297ef39a"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-7cb8e9255fc6c85e2bf9cb6662157893",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-3"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-71d91f3cc67b669fb5d602039c8b348a",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "e9cee0f5-b168-4f4d-98ce-44c4b6531fc0"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-71d91f3cc67b669fb5d602039c8b348a",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-be611a385f5ca6a676e9033703eae0b3",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "d69ae6d6-640b-41c4-bec3-f2aaa99cb1ed"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-be611a385f5ca6a676e9033703eae0b3",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-aadc3977559a9c333a14ef07cc98cf0b",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "dc23b2f5-bc1c-441f-b4ac-be4527fbad07"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-aadc3977559a9c333a14ef07cc98cf0b",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-c9cda06397dce2677d84646d7a52fc3f",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "53a293a4-991a-47ec-88cf-3309d930af1c"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-c9cda06397dce2677d84646d7a52fc3f",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-GATEWAY-98784f3f27e68796bcb38ab36947ba30",
+            "type" : "GATEWAY",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "29e670b9-ff85-4302-8f05-c222026f4634"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-GATEWAY-98784f3f27e68796bcb38ab36947ba30",
+            "roleState" : "NA",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ ],
+            "configStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-GATEWAY-BASE"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-5655e45468e265054ce9157a7ca8b860",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "90e0a464-230d-4039-b89c-482e5f9b847c"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-5655e45468e265054ce9157a7ca8b860",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-867401a162b5e5bba08f689caeee706c",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "e1834827-3dfa-49d7-8d44-b3b760614e32"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-867401a162b5e5bba08f689caeee706c",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-739e30532a60bb645fb9a53c7cfce676",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "05bdfb5d-d0d2-4e92-87fd-b18735197a8f"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-739e30532a60bb645fb9a53c7cfce676",
+            "roleState" : "STOPPED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "DISABLED"
+            } ],
+            "configStalenessStatus" : "FRESH",
+            "maintenanceMode" : true,
+            "maintenanceOwners" : [ "HOST" ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-967b183ab15dd7b9037114ce45ca00dc",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "55229960-cfda-4fec-8904-9f6f580f0077"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-967b183ab15dd7b9037114ce45ca00dc",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-e7ca2fd1d2840baf8881623edf5edb1a",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "7a9bf4b0-a287-4908-a44a-723c0739c302"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-e7ca2fd1d2840baf8881623edf5edb1a",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-d7d861e00e3038a4366a152579718031",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "af08a144-3ec1-43b5-99e2-9c24d84440a8"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-d7d861e00e3038a4366a152579718031",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-295db7860ba4c40f0ac7e5758e1669af",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "4bb4b65b-40e8-4fd7-b1ca-676a470f73f5"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-295db7860ba4c40f0ac7e5758e1669af",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-3c2175d09e6f8cefbf96702e01340996",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "4c4772d9-ef1b-4903-8cdf-307ad6d0607a"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-3c2175d09e6f8cefbf96702e01340996",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-88a46b7a07a142d73d3dc9ea7eb243e8",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "899b9d6e-f8b7-4681-be38-3f6a5e46d3ec"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-88a46b7a07a142d73d3dc9ea7eb243e8",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-76a2f27f9d5b961b63ff5d936e017fbd",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "f704c1b6-a6c0-4391-b961-7d48ff8f3fb3"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-76a2f27f9d5b961b63ff5d936e017fbd",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-bf41d8e9759a46fc755bda699d134a9b",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "32e7ec1b-08ee-4296-bea5-dbabac3d2060"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-bf41d8e9759a46fc755bda699d134a9b",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-43b3c321699dec6ab0c1e04c9d0c7b8a",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "4cbbdc5a-65c8-46af-885c-855d103d84c9"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-43b3c321699dec6ab0c1e04c9d0c7b8a",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-d757490a202df588e3a92f224c5f1500",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "e2785591-23d4-4526-b7e3-46f6a71fe6ef"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-d757490a202df588e3a92f224c5f1500",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-ebb8214b11ed2cbef1dedfdf732f2a67",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "7516fc92-dbe1-480a-80e8-6050050f2c9e"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-ebb8214b11ed2cbef1dedfdf732f2a67",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-8792acfdb9dba5df987600ed34a3e843",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "c24b44d5-7fb6-4861-bb36-36e6a3b5302f"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-8792acfdb9dba5df987600ed34a3e843",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-2b3bb2fbe9a33ccd7b07e1f07c7a49a2",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "79fb262a-5cc5-4d0e-a3a6-9dc68971ac39"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-2b3bb2fbe9a33ccd7b07e1f07c7a49a2",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-cdb0c3666a801c4b584a7012041d380e",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "9cab1ae0-4edb-4d6a-8b0c-8db641defe2c"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-cdb0c3666a801c4b584a7012041d380e",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-a2537df5b8b1fe1479227d22a65fcda9",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "7ee33453-7b38-4cf1-9d52-b87188880de1"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-a2537df5b8b1fe1479227d22a65fcda9",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-0d883f51689d4718e6f1de0475bd8285",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "3f1d06a2-77e6-4b2e-a39d-01a182980081"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-0d883f51689d4718e6f1de0475bd8285",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-780dc76e0c33f4dec540ca76574b8a7c",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "393b9938-9e77-4741-9cdc-3e8c0d456cec"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-780dc76e0c33f4dec540ca76574b8a7c",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-c11a44d8fb64c67cf52f3bb5b87fa585",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "1c5e9ef0-54ec-4667-a7df-629f4063940c"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-c11a44d8fb64c67cf52f3bb5b87fa585",
+            "roleState" : "STARTED",
+            "healthSummary" : "CONCERNING",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "CONCERNING"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-55c5ee7271e5d14740a2b3c011810872",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "42c2eac2-82a9-4935-b8c3-682df540fcee"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-55c5ee7271e5d14740a2b3c011810872",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-47f6951561bd265ffc082f02fadc4845",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "6967e0fd-dda9-48ac-9fde-23b801376b87"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-47f6951561bd265ffc082f02fadc4845",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-d53132779594078ac4d391b383df1df4",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "54dee31f-a9fe-4bc7-bb4c-19dddc8d8659"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-d53132779594078ac4d391b383df1df4",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-9c6862e304f1c5e556a6453f46b9c9c9",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "9c6db8df-b4b8-4e83-a3bf-f93d40fd1cce"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-9c6862e304f1c5e556a6453f46b9c9c9",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-d54170416ba5830be57f251535a05e25",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "adb3d59c-da44-42f6-8e90-39343d8f2090"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-d54170416ba5830be57f251535a05e25",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-8c679a16d1f6b04628f738132f833c04",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "48a75414-b4c2-441c-9e59-ec9541853b46"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-8c679a16d1f6b04628f738132f833c04",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-a65bfa6ccc7e86908d870b61b725e0e0",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "5d124710-05c9-4c10-b46d-05283d00314c"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-a65bfa6ccc7e86908d870b61b725e0e0",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-7455b7048fb9b0c70a05dd13f921b8d5",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "188098d6-3784-41a5-9417-0bc428618f74"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-7455b7048fb9b0c70a05dd13f921b8d5",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-JOBHISTORY-3cec0b15ca7a30e44f28eeda5552f08f",
+            "type" : "JOBHISTORY",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "5e605430-17c9-4922-83de-a83668dab743"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-JOBHISTORY-3cec0b15ca7a30e44f28eeda5552f08f",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "JOBHISTORY_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "JOBHISTORY_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "JOBHISTORY_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "JOBHISTORY_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "JOBHISTORY_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "JOBHISTORY_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "JOBHISTORY_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "JOBHISTORY_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "JOBHISTORY_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-JOBHISTORY-BASE"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-7df360e4adc09949275a65f8eac67f39",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "99081365-18ec-4b44-8d2a-963973b717c5"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-7df360e4adc09949275a65f8eac67f39",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-3"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-63b4045b6378e5a5ffb9e404c0f42579",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "a029b6c7-dbab-48e8-87b0-af845f1c85d7"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-63b4045b6378e5a5ffb9e404c0f42579",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-1f736a25e6db4fa4faf20afc24cb8e7e",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "6c9b5af5-93d5-4e84-9ae5-5b565f1ca314"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-1f736a25e6db4fa4faf20afc24cb8e7e",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-66a9e9612208079cc1437a009cca1306",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "4a1e2500-652e-44ad-a618-67755d754807"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-66a9e9612208079cc1437a009cca1306",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-a39b1b79a9b029cebe09b07dbd9d9197",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "863e1185-1ddb-4a49-b401-c0f3e5e99ee5"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-a39b1b79a9b029cebe09b07dbd9d9197",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-5fa330870c9fa6bf689b69bfe823bc67",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "0a1bb86e-edc7-4483-aba6-aa046a25cfcb"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-5fa330870c9fa6bf689b69bfe823bc67",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-3"
+            }
+          }, {
+            "name" : "yarn-GATEWAY-f233fbd2528abacef733931b726d9884",
+            "type" : "GATEWAY",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "0a5133bf-f4b7-41c1-a126-084e64eec04a"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-GATEWAY-f233fbd2528abacef733931b726d9884",
+            "roleState" : "NA",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ ],
+            "configStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-GATEWAY-BASE"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-cff767b8241466e2286da06c89cd0451",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "3284948f-9143-4b8c-8165-508d899fd829"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-cff767b8241466e2286da06c89cd0451",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-59ca98bb55c85045e05fc68a226f1275",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "5980f874-dffa-4692-bc9c-a65f62af38f9"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-59ca98bb55c85045e05fc68a226f1275",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-e8b2fc66e36947ddfd3fe5570682d168",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "283f9634-a3fc-45b8-850c-968f1177a307"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-e8b2fc66e36947ddfd3fe5570682d168",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-GATEWAY-3cec0b15ca7a30e44f28eeda5552f08f",
+            "type" : "GATEWAY",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "5e605430-17c9-4922-83de-a83668dab743"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-GATEWAY-3cec0b15ca7a30e44f28eeda5552f08f",
+            "roleState" : "NA",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ ],
+            "configStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-GATEWAY-BASE"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-a3b390d2830b80456e13f5d34cf60772",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "7e56ff03-cef5-456f-b5b7-f9bcb01cb067"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-a3b390d2830b80456e13f5d34cf60772",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-f173d1e7345c589f676f0edf7328be53",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "7a3037b0-d8b8-40db-97eb-03442aa9fb57"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-f173d1e7345c589f676f0edf7328be53",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-0d0a5d9c1a6200c2bb456e53378a99d1",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "efcd39a2-16e4-42fc-96d1-e87d88219286"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-0d0a5d9c1a6200c2bb456e53378a99d1",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-3"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-aa00aec6a271160f977e93d477d4a4c2",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "95b19247-5160-471a-8352-cb6db1969afb"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-aa00aec6a271160f977e93d477d4a4c2",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-28ce78e9542fc216aa413c3b3baf6ab5",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "d6d97a31-a464-44a4-a940-72c7dec6b39b"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-28ce78e9542fc216aa413c3b3baf6ab5",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-49738dd2be8d1d4fa99a67140f977776",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "2ad6646e-999e-462d-a3c3-e3ce037fe579"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-49738dd2be8d1d4fa99a67140f977776",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-56282cd7241d33822a13a2cc726dd805",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "32539007-74aa-4c37-a7b0-977795ef0eb1"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-56282cd7241d33822a13a2cc726dd805",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-70cdbf259ddddd5d2b705ffc0a2c1d9d",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "ac9fb738-c06d-40d7-8e81-5bc48a112623"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-70cdbf259ddddd5d2b705ffc0a2c1d9d",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-7f763dd52248b4750a78e2353e1e1e87",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "a6b66755-fe09-4ed2-917c-d7a3cde952a6"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-7f763dd52248b4750a78e2353e1e1e87",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-RESOURCEMANAGER-5068bde938639b7bf18f7da78d115e78",
+            "type" : "RESOURCEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "ef084a49-6334-41f0-8dac-f580df1fcad8"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-RESOURCEMANAGER-5068bde938639b7bf18f7da78d115e78",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "RESOURCE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "RESOURCE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "FRESH",
+            "haStatus" : "STANDBY",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-RESOURCEMANAGER-BASE"
+            }
+          }, {
+            "name" : "yarn-RESOURCEMANAGER-f233fbd2528abacef733931b726d9884",
+            "type" : "RESOURCEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "0a5133bf-f4b7-41c1-a126-084e64eec04a"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-RESOURCEMANAGER-f233fbd2528abacef733931b726d9884",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "RESOURCE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "RESOURCE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "RESOURCE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE",
+            "haStatus" : "ACTIVE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-RESOURCEMANAGER-BASE"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-d9a5bf31f583b8e0c8ab3a48ebcb316a",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "89e6c991-a353-4762-8d77-fbaca6cdabf0"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-d9a5bf31f583b8e0c8ab3a48ebcb316a",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-79308364b184689e1b0fdcb6b13ab92f",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "da8b9c58-2350-4a23-9236-3fca4c0fa98b"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-79308364b184689e1b0fdcb6b13ab92f",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-a6fe182e217bcc5d24bf69192613dade",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "f3d7f50c-714c-49e5-aff3-64a46e018242"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-a6fe182e217bcc5d24bf69192613dade",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-5134b268f7a1e7dd18c0096e0e7aeaa6",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "b3656fab-a5ad-4ad9-b612-f2a7fef5cd8b"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-5134b268f7a1e7dd18c0096e0e7aeaa6",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-7057804454127ad8a8745382eca7405c",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "b0de5cbc-a35f-443f-b688-60af529b66e0"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-7057804454127ad8a8745382eca7405c",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-ab4463bf435804af60d2c7dc8f3cdf51",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "fe3f88f0-4f1f-4e30-927e-3ff8e04ed64d"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-ab4463bf435804af60d2c7dc8f3cdf51",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-GATEWAY-55a6f74b093d8da8af5f715e8ba5ec2b",
+            "type" : "GATEWAY",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "9f267439-c2d3-44a9-b861-a6fb2cfb852f"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-GATEWAY-55a6f74b093d8da8af5f715e8ba5ec2b",
+            "roleState" : "NA",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ ],
+            "configStalenessStatus" : "FRESH",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-GATEWAY-BASE"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-dec8a46185f8ea0a12dbf59d4a222388",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "bb25c633-da3b-4a54-a4cb-8f394dea7ffa"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-dec8a46185f8ea0a12dbf59d4a222388",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-4"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-dd4ede70a84b57c33061848cacd7d835",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "df8c57fa-9008-410e-ac50-845a4ee10e5a"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-dd4ede70a84b57c33061848cacd7d835",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-2"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-b2bb05344b1b5a2e90fb2ccda9eff20d",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "03414a89-7f80-41bf-81e8-5deb6192c8b7"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-b2bb05344b1b5a2e90fb2ccda9eff20d",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-3"
+            }
+          }, {
+            "name" : "yarn-NODEMANAGER-78fbcc42e6f615af0985a8c795e5412d",
+            "type" : "NODEMANAGER",
+            "serviceRef" : {
+              "clusterName" : "cluster",
+              "serviceName" : "yarn"
+            },
+            "hostRef" : {
+              "hostId" : "7ce7ae5a-f30d-421f-8d87-d8cdac0ab2b7"
+            },
+            "roleUrl" : "http://hadoop.com:7111/cmf/roleRedirect/yarn-NODEMANAGER-78fbcc42e6f615af0985a8c795e5412d",
+            "roleState" : "STARTED",
+            "healthSummary" : "GOOD",
+            "healthChecks" : [ {
+              "name" : "NODEMANAGER_LOCAL_DATA_DIRECTORIES_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODEMANAGER_RECOVERY_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_CONNECTIVITY",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_FILE_DESCRIPTOR",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_GC_DURATION",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_HEAP_DUMP_DIRECTORY_FREE_SPACE",
+              "summary" : "DISABLED"
+            }, {
+              "name" : "NODE_MANAGER_HOST_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_LOG_DIRECTORY_FREE_SPACE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SCM_HEALTH",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_SWAP_MEMORY_USAGE",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_UNEXPECTED_EXITS",
+              "summary" : "GOOD"
+            }, {
+              "name" : "NODE_MANAGER_WEB_METRIC_COLLECTION",
+              "summary" : "GOOD"
+            } ],
+            "configStalenessStatus" : "STALE_REFRESHABLE",
+            "maintenanceMode" : false,
+            "maintenanceOwners" : [ ],
+            "commissionState" : "COMMISSIONED",
+            "roleConfigGroupRef" : {
+              "roleConfigGroupName" : "yarn-NODEMANAGER-1"
+            }
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 24 Nov 2015 03:24:35 GMT
+recorded_with: VCR 3.0.0
