@@ -22,12 +22,25 @@ module ClouderaManager
         command = if data.respond_to?(:to_hash)
           Command.new(data.to_hash)
         else
-          BulkCommand.new(data)
+          BulkCommand.new(*data)
         end
-        refresh if response.success? && command.success
+        if response.success?
+          command.block_until_outcome
+          refresh
+        end
       end
 
       command
+    end
+
+    def remote_property(path_segment)
+      self.class.request(_method: :get, _path: File.join(request_path, path_segment)) do |parsed_data, response|
+        if response.success? || parsed_data[:errors].any?
+          return parsed_data[:data]
+        else
+          raise Faraday::Error::ClientError, {:status => response.status, :headers => response.response_headers, :body => response.body}
+        end
+      end
     end
   end
 end

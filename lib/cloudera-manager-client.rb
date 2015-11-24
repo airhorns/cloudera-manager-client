@@ -33,6 +33,8 @@ module ClouderaManager
       end
     end
   end
+
+  class BaseException < Exception; end
 end
 
 require 'cloudera-manager/logging'
@@ -42,4 +44,6 @@ require 'cloudera-manager/host'
 require 'cloudera-manager/service'
 require 'cloudera-manager/cluster'
 require 'cloudera-manager/role'
+require 'cloudera-manager/command_actions'
 require 'cloudera-manager/command'
+require 'cloudera-manager/bulk_command'
