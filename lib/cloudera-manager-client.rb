@@ -35,6 +35,7 @@ module ClouderaManager
   end
 end
 
+require 'cloudera-manager/logging'
 require 'cloudera-manager/base_resource'
 require 'cloudera-manager/tool'
 require 'cloudera-manager/host'

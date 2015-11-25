@@ -1,6 +1,7 @@
 module ClouderaManager
   class BaseResource
     include Her::Model
+    include Logging
     use_api ClouderaManager.api
 
     def refresh
