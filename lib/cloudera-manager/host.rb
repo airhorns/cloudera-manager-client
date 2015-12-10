@@ -19,11 +19,11 @@ module ClouderaManager
     end
 
     def enter_maintenance_mode!
-      remote_command! :post, 'commands/enterMaintenanceMode'
+      remote_command! 'commands/enterMaintenanceMode'
     end
 
     def exit_maintenance_mode!
-      remote_command! :post, 'commands/exitMaintenanceMode'
+      remote_command! 'commands/exitMaintenanceMode'
     end
   end
 end

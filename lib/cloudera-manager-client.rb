@@ -4,29 +4,47 @@ require 'cloudera-manager/middleware/json_parser'
 require 'cloudera-manager/middleware/json_serializer'
 
 module ClouderaManager
-  def self.api
-    @api ||= Her::API.new
-  end
+  class << self
+    attr_writer :logger
 
-  def self.setup(options, &blk)
-    username = options.delete(:username)
-    password = options.delete(:password)
+    def logger
+      @logger ||= Logger.new($stdout).tap do |log|
+        log.progname = self.name
+      end
+    end
 
-    api.setup(options) do |conn|
-      conn.use Her::Middleware::AcceptJSON
-      conn.use ClouderaManager::Middleware::URLPrefix, '/api/v10'
-      conn.use ClouderaManager::Middleware::JSONParser
-      conn.use ClouderaManager::Middleware::JSONSerializer
-      conn.basic_auth username, password
-      conn.adapter Faraday.default_adapter
-      blk.call(conn) if blk
+    def api
+      @api ||= Her::API.new
+    end
+
+    def setup(options, &blk)
+      username = options.delete(:username)
+      password = options.delete(:password)
+
+      api.setup(options) do |conn|
+        conn.use Her::Middleware::AcceptJSON
+        conn.use ClouderaManager::Middleware::URLPrefix, '/api/v10'
+        conn.use ClouderaManager::Middleware::JSONParser
+        conn.use ClouderaManager::Middleware::JSONSerializer
+        conn.use Faraday::Response::RaiseError
+        conn.basic_auth username, password
+        conn.adapter Faraday.default_adapter
+        blk.call(conn) if blk
+      end
     end
   end
+
+  class BaseException < Exception; end
 end
 
+require 'cloudera-manager/logging'
 require 'cloudera-manager/base_resource'
 require 'cloudera-manager/tool'
 require 'cloudera-manager/host'
 require 'cloudera-manager/service'
 require 'cloudera-manager/cluster'
+require 'cloudera-manager/role'
+require 'cloudera-manager/command_actions'
 require 'cloudera-manager/command'
+require 'cloudera-manager/bulk_command'
+require 'cloudera-manager/restart_strategy'

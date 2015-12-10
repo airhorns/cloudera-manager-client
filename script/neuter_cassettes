@@ -10,5 +10,5 @@ Dir.glob(File.join(File.dirname(__FILE__), '..', 'test', 'cassettes', '*.yml')) 
     new_line
   end
   File.open(path, 'w') { |file| file.puts lines }
-  puts "Rewrote #{path}, changed #{changes} lines"
+  puts "Rewrote #{path}, changed #{changes} lines" if changes > 0
 end

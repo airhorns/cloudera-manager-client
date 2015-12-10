@@ -41,7 +41,7 @@ class ClouderaManager::HostTest < RemoteTest
   end
 
   def test_putting_a_host_into_maintenance_mode_failure
-    @host = ClouderaManager::Host.find('4f8ebfcb-20c9-47f1-bd0e-cd3f1d8c891e')
+    @host = ClouderaManager::Host.find('9fe976ea-5778-45d7-b557-ae915820a452')
     assert !@host.maintenanceMode
 
     @command = @host.enter_maintenance_mode!
@@ -66,14 +66,14 @@ class ClouderaManager::HostTest < RemoteTest
   end
 
   def test_exiting_a_host_from_maintenance_mode_failure
-    @host = ClouderaManager::Host.find('4f8ebfcb-20c9-47f1-bd0e-cd3f1d8c891e')
+    @host = ClouderaManager::Host.find('9fe976ea-5778-45d7-b557-ae915820a452')
     assert !@host.maintenanceMode
 
     @host.enter_maintenance_mode!
     assert @host.maintenanceMode
 
     @command = @host.exit_maintenance_mode!
-    assert @host.maintenanceMode
+    assert @host.maintenanceMode  # doctored fixture to have success: false
 
     assert !@command.success
     assert_equal "Thing failed", @command.resultMessage

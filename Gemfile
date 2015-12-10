@@ -10,4 +10,6 @@ group :development do
   gem 'webmock'
   gem 'vcr'
   gem 'minitest-ci', :git => 'git@github.com:circleci/minitest-ci.git', :require => false
+  gem 'timecop'
+  gem 'mocha'
 end
